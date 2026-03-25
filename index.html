@@ -6,6 +6,7 @@
     <meta name="description" content="Слафт — запчасти и комплектующие для дождевальных машин. Каталог, доставка, консультации.">
     <title>Слафт — запчасти для дождевальных машин</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body class="page-main__body">
     <header class="header">
@@ -64,18 +65,20 @@
 
     <main class="page-main__content">
         <section class="hero" aria-label="Главный баннер">
-            <div class="hero__media" role="img" aria-label="Плейсхолдер: дождевальная машина на поле — фото будет добавлено"></div>
+            <div class="hero__media">
+                <img class="hero__img" src="./img/main-hero.png" width="1920" height="1080" alt="Дождевальная техника на поле" fetchpriority="high" decoding="async">
+            </div>
             <div class="layout hero__inner">
                 <h1 class="hero__title">Запчасти и комплектующие для дождевальных машин</h1>
                 <p class="hero__lead">Структурированный каталог, быстрый заказ и консультация менеджера — для хозяйств и сервисов по всей стране.</p>
             </div>
         </section>
 
-        <section class="motto section section--tight">
+        <!-- <section class="motto section section--tight">
             <div class="layout">
                 <p class="motto__text">Слафт поможет с дождевальными машинами во всём!</p>
             </div>
-        </section>
+        </section> -->
 
         <section class="cta-catalog section" aria-labelledby="cta-catalog-title">
             <div class="layout">
@@ -91,7 +94,7 @@
 
         <section class="advantages section section--alt" aria-labelledby="advantages-title">
             <div class="layout">
-                <h2 class="section__title" id="advantages-title">Наши преимущества</h2>
+                <h2 class="section__title" id="advantages-title">Наши преимущества и акции</h2>
                 <ul class="grid-cards">
                     <li class="card card--metal">
                         <h3 class="card__title">Ассортимент под задачу</h3>
@@ -102,8 +105,8 @@
                         <p class="card__text">Соберите корзину в каталоге и отправьте заявку — менеджер перезвонит и подтвердит детали.</p>
                     </li>
                     <li class="card card--metal">
-                        <h3 class="card__title">Понятная структура</h3>
-                        <p class="card__text">Каталог и карточки товаров оформлены так, чтобы не теряться даже с медленным интернетом.</p>
+                        <h3 class="card__title">Даем отсрочку платежа</h3>
+                        <p class="card__text">Всё для наших клиентов! Вы сначала получаете товар, а потом платите.</p>
                     </li>
                     <li class="card card--metal">
                         <h3 class="card__title">Работаем с техникой поля</h3>
@@ -113,25 +116,7 @@
             </div>
         </section>
 
-        <section class="audience section section--bright" aria-labelledby="audience-title">
-            <div class="layout">
-                <h2 class="section__title section__title--on-dark" id="audience-title">Кому подойдут наши запчасти</h2>
-                <ul class="grid-cards grid-cards--2">
-                    <li class="card card--glass">
-                        <h3 class="card__title">Хозяйства и агрохолдинги</h3>
-                        <p class="card__text">Полив и обслуживание дождевальных машин на полях: регулярные закупки и плановый ремонт.</p>
-                    </li>
-                    <li class="card card--glass">
-                        <h3 class="card__title">Сервисы и механики</h3>
-                        <p class="card__text">Подбор аналогов, комплектующих и расходников для срочного и планового обслуживания.</p>
-                    </li>
-                    <li class="card card--glass">
-                        <h3 class="card__title">Владельцы техники</h3>
-                        <p class="card__text">Если сами ведёте ремонт — поможем с номенклатурой и консультацией по совместимости.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
+        <!-- Секция «Кому подойдут наши запчасти» убрана по согласованию; её фон перенесён на блок «Нам доверяют» (см. .trust.section в style.css). -->
 
         <section class="benefits section" aria-labelledby="benefits-title">
             <div class="layout">
@@ -148,14 +133,42 @@
             </div>
         </section>
 
-        <section class="portfolio section section--alt" aria-labelledby="portfolio-title">
+        <section class="trust section" aria-labelledby="trust-title">
             <div class="layout">
-                <h2 class="section__title" id="portfolio-title">Примеры наших работ</h2>
-                <ul class="portfolio__grid">
-                    <li class="portfolio__item"><span class="portfolio__placeholder">Фото 1</span></li>
-                    <li class="portfolio__item"><span class="portfolio__placeholder">Фото 2</span></li>
-                    <li class="portfolio__item"><span class="portfolio__placeholder">Фото 3</span></li>
-                </ul>
+                <h2 class="section__title section__title--on-dark" id="trust-title">Нам доверяют</h2>
+                <div class="trust__frame">
+                    <button type="button" class="trust__nav trust__nav--prev" aria-controls="trust-slider" aria-label="Предыдущие логотипы">
+                        <svg class="trust__nav-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                    </button>
+                    <div class="swiper trust__swiper" id="trust-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide trust__slide">
+                            <img class="trust__logo" src="./img/logo-company-slider/AGCO-01.svg" width="280" height="120" alt="AGCO" loading="lazy" decoding="async">
+                        </div>
+                        <div class="swiper-slide trust__slide">
+                            <img class="trust__logo" src="./img/logo-company-slider/Charoen-Pokphand-Foods-01.svg" width="280" height="120" alt="Charoen Pokphand Foods" loading="lazy" decoding="async">
+                        </div>
+                        <div class="swiper-slide trust__slide">
+                            <img class="trust__logo" src="./img/logo-company-slider/John-Deere-01.svg" width="280" height="120" alt="John Deere" loading="lazy" decoding="async">
+                        </div>
+                        <div class="swiper-slide trust__slide">
+                            <img class="trust__logo" src="./img/logo-company-slider/New-Holland-Agriculture-01.svg" width="280" height="120" alt="New Holland Agriculture" loading="lazy" decoding="async">
+                        </div>
+                        <div class="swiper-slide trust__slide">
+                            <img class="trust__logo" src="./img/logo-company-slider/Olam-01.svg" width="280" height="120" alt="Olam" loading="lazy" decoding="async">
+                        </div>
+                        <div class="swiper-slide trust__slide">
+                            <img class="trust__logo" src="./img/logo-company-slider/Syngenta-01.svg" width="280" height="120" alt="Syngenta" loading="lazy" decoding="async">
+                        </div>
+                        <div class="swiper-slide trust__slide">
+                            <img class="trust__logo" src="./img/logo-company-slider/Tereos-01.svg" width="280" height="120" alt="Tereos" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    </div>
+                    <button type="button" class="trust__nav trust__nav--next" aria-controls="trust-slider" aria-label="Следующие логотипы">
+                        <svg class="trust__nav-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    </button>
+                </div>
             </div>
         </section>
     </main>
@@ -206,6 +219,7 @@
         </div>
     </footer>
 
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>

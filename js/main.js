@@ -36,3 +36,50 @@
         }
     });
 })();
+
+(function () {
+    if (typeof Swiper === "undefined") {
+        return;
+    }
+
+    var root = document.querySelector(".trust__swiper");
+    if (!root) {
+        return;
+    }
+
+    new Swiper(".trust__swiper", {
+        slidesPerView: 2,
+        spaceBetween: 28,
+        loop: false,
+        rewind: true,
+        speed: 600,
+        centerInsufficientSlides: true,
+        navigation: {
+            prevEl: ".trust__nav--prev",
+            nextEl: ".trust__nav--next",
+        },
+        autoplay: false,
+        breakpoints: {
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 32,
+            },
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 36,
+            },
+            900: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+            1200: {
+                slidesPerView: 5,
+                spaceBetween: 44,
+            },
+        },
+        a11y: {
+            enabled: true,
+            containerMessage: "Компании, которым доверяют",
+        },
+    });
+})();
