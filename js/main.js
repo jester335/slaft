@@ -38,48 +38,142 @@
 })();
 
 (function () {
-    if (typeof Swiper === "undefined") {
+    var viewport = document.querySelector(".trust__viewport");
+    var track = document.querySelector(".trust__track");
+    var prevEl = document.querySelector(".trust__nav--prev");
+    var nextEl = document.querySelector(".trust__nav--next");
+    if (!viewport || !track || !prevEl || !nextEl) {
         return;
     }
 
-    var root = document.querySelector(".trust__swiper");
-    if (!root) {
-        return;
+    var slides = track.querySelectorAll(".trust__slide");
+
+    function getGapPx() {
+        var w = window.innerWidth;
+        if (w >= 1024) {
+            return 40;
+        }
+        if (w >= 900) {
+            return 36;
+        }
+        if (w >= 640) {
+            return 32;
+        }
+        return 28;
     }
 
-    new Swiper(".trust__swiper", {
-        slidesPerView: 2,
-        spaceBetween: 28,
-        loop: false,
-        rewind: true,
-        speed: 600,
-        centerInsufficientSlides: true,
-        navigation: {
-            prevEl: ".trust__nav--prev",
-            nextEl: ".trust__nav--next",
-        },
-        autoplay: false,
-        breakpoints: {
-            480: {
-                slidesPerView: 2,
-                spaceBetween: 32,
-            },
-            640: {
-                slidesPerView: 3,
-                spaceBetween: 36,
-            },
-            900: {
-                slidesPerView: 4,
-                spaceBetween: 40,
-            },
-            1200: {
-                slidesPerView: 5,
-                spaceBetween: 44,
-            },
-        },
-        a11y: {
-            enabled: true,
-            containerMessage: "Компании, которым доверяют",
-        },
+    function getSlidesPerView() {
+        var w = window.innerWidth;
+        if (w >= 1024) {
+            return 5;
+        }
+        if (w >= 900) {
+            return 4;
+        }
+        if (w >= 640) {
+            return 3;
+        }
+        return 2;
+    }
+
+    function applySlideWidths() {
+        var vw = viewport.clientWidth;
+        var n = getSlidesPerView();
+        var g = getGapPx();
+        var slideW = (vw - g * (n - 1)) / n;
+        if (slideW < 0) {
+            slideW = 0;
+        }
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.width = slideW + "px";
+        }
+        track.style.gap = g + "px";
+    }
+
+    function scrollStep(dir) {
+        var vw = viewport.clientWidth;
+        var n = getSlidesPerView();
+        var g = getGapPx();
+        var slideW = (vw - g * (n - 1)) / n;
+        var step = slideW + g;
+        var behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+        viewport.scrollBy({ left: dir * step, behavior: behavior });
+    }
+
+    applySlideWidths();
+    if (typeof ResizeObserver !== "undefined") {
+        new ResizeObserver(applySlideWidths).observe(viewport);
+    }
+    window.addEventListener("resize", applySlideWidths);
+    window.addEventListener("load", applySlideWidths);
+
+    prevEl.addEventListener("click", function (e) {
+        e.preventDefault();
+        scrollStep(-1);
     });
+    nextEl.addEventListener("click", function (e) {
+        e.preventDefault();
+        scrollStep(1);
+    });
+
+    /* Тач: нативный горизонтальный скролл. Мышь: drag + колесо → горизонталь */
+    var dragStartX = 0;
+    var dragScrollStart = 0;
+    var dragging = false;
+
+    viewport.addEventListener(
+        "wheel",
+        function (e) {
+            if (viewport.scrollWidth <= viewport.clientWidth) {
+                return;
+            }
+            if (e.deltaX === 0 && e.deltaY === 0) {
+                return;
+            }
+            e.preventDefault();
+            viewport.scrollLeft += e.deltaY + e.deltaX;
+        },
+        { passive: false }
+    );
+
+    viewport.addEventListener("pointerdown", function (e) {
+        if (e.pointerType === "touch") {
+            return;
+        }
+        if (e.button !== 0) {
+            return;
+        }
+        dragging = true;
+        dragStartX = e.clientX;
+        dragScrollStart = viewport.scrollLeft;
+        viewport.classList.add("trust__viewport--dragging");
+        try {
+            viewport.setPointerCapture(e.pointerId);
+        } catch (err) {
+            /* ignore */
+        }
+    });
+
+    viewport.addEventListener("pointermove", function (e) {
+        if (!dragging || e.pointerType === "touch") {
+            return;
+        }
+        viewport.scrollLeft = dragScrollStart - (e.clientX - dragStartX);
+    });
+
+    function endDrag(e) {
+        if (!dragging) {
+            return;
+        }
+        dragging = false;
+        viewport.classList.remove("trust__viewport--dragging");
+        try {
+            viewport.releasePointerCapture(e.pointerId);
+        } catch (err) {
+            /* ignore */
+        }
+    }
+
+    viewport.addEventListener("pointerup", endDrag);
+    viewport.addEventListener("pointercancel", endDrag);
 })();

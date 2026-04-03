@@ -6,7 +6,6 @@
     <meta name="description" content="Слафт — запчасти и комплектующие для дождевальных машин. Каталог, доставка, консультации.">
     <title>Слафт — запчасти для дождевальных машин</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body class="page-main__body">
     <header class="header">
@@ -66,7 +65,7 @@
     <main class="page-main__content">
         <section class="hero" aria-label="Главный баннер">
             <div class="hero__media">
-                <img class="hero__img" src="./img/main-hero.png" width="1920" height="1080" alt="Дождевальная техника на поле" fetchpriority="high" decoding="async">
+                <img class="hero__img" src="./img/New-hero-bg.png" width="1920" height="1080" alt="Дождевальная техника на поле" fetchpriority="high" decoding="async">
             </div>
             <div class="layout hero__inner">
                 <h1 class="hero__title">Запчасти и комплектующие для дождевальных машин</h1>
@@ -92,7 +91,7 @@
             </div>
         </section>
 
-        <section class="advantages section section--alt" aria-labelledby="advantages-title">
+        <section class="advantages section" aria-labelledby="advantages-title">
             <div class="layout">
                 <h2 class="section__title" id="advantages-title">Наши преимущества и акции</h2>
                 <ul class="grid-cards">
@@ -140,30 +139,30 @@
                     <button type="button" class="trust__nav trust__nav--prev" aria-controls="trust-slider" aria-label="Предыдущие логотипы">
                         <svg class="trust__nav-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
                     </button>
-                    <div class="swiper trust__swiper" id="trust-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide trust__slide">
+                    <div class="trust__viewport" id="trust-slider" tabindex="0" role="region" aria-label="Логотипы компаний">
+                        <div class="trust__track">
+                        <div class="trust__slide">
                             <img class="trust__logo" src="./img/logo-company-slider/AGCO-01.svg" width="280" height="120" alt="AGCO" loading="lazy" decoding="async">
                         </div>
-                        <div class="swiper-slide trust__slide">
+                        <div class="trust__slide">
                             <img class="trust__logo" src="./img/logo-company-slider/Charoen-Pokphand-Foods-01.svg" width="280" height="120" alt="Charoen Pokphand Foods" loading="lazy" decoding="async">
                         </div>
-                        <div class="swiper-slide trust__slide">
+                        <div class="trust__slide">
                             <img class="trust__logo" src="./img/logo-company-slider/John-Deere-01.svg" width="280" height="120" alt="John Deere" loading="lazy" decoding="async">
                         </div>
-                        <div class="swiper-slide trust__slide">
+                        <div class="trust__slide">
                             <img class="trust__logo" src="./img/logo-company-slider/New-Holland-Agriculture-01.svg" width="280" height="120" alt="New Holland Agriculture" loading="lazy" decoding="async">
                         </div>
-                        <div class="swiper-slide trust__slide">
+                        <div class="trust__slide">
                             <img class="trust__logo" src="./img/logo-company-slider/Olam-01.svg" width="280" height="120" alt="Olam" loading="lazy" decoding="async">
                         </div>
-                        <div class="swiper-slide trust__slide">
+                        <div class="trust__slide">
                             <img class="trust__logo" src="./img/logo-company-slider/Syngenta-01.svg" width="280" height="120" alt="Syngenta" loading="lazy" decoding="async">
                         </div>
-                        <div class="swiper-slide trust__slide">
+                        <div class="trust__slide">
                             <img class="trust__logo" src="./img/logo-company-slider/Tereos-01.svg" width="280" height="120" alt="Tereos" loading="lazy" decoding="async">
                         </div>
-                    </div>
+                        </div>
                     </div>
                     <button type="button" class="trust__nav trust__nav--next" aria-controls="trust-slider" aria-label="Следующие логотипы">
                         <svg class="trust__nav-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
@@ -219,7 +218,6 @@
         </div>
     </footer>
 
-    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>
