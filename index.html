@@ -68,11 +68,18 @@
     <main class="page-main__content">
         <section class="hero" aria-label="Главный баннер">
             <div class="hero__media">
-                <img class="hero__img" src="./img/New-hero-bg.png" width="1920" height="1080" alt="Дождевальная техника на поле" fetchpriority="high" decoding="async">
+                <img class="hero__img" src="./img/new-hero-bg-contrast.png" width="1920" height="1080" alt="Дождевальная техника на поле" fetchpriority="high" decoding="async">
             </div>
             <div class="layout hero__inner">
-                <h1 class="hero__title">Запчасти и комплектующие для дождевальных машин</h1>
-                <p class="hero__lead">Структурированный каталог, быстрый заказ и консультация менеджера — для хозяйств и сервисов по всей стране.</p>
+                <div class="hero__content" id="hero-content" aria-hidden="true">
+                    <h1 class="hero__title">Запчасти и комплектующие для дождевальных машин</h1>
+                    <a class="hero__catalog-link" href="#catalog-teaser">
+                        Перейти к Каталогу
+                        <svg class="hero__catalog-link__chevron" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path fill="currentColor" d="M7 10l5 5 5-5H7z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -82,7 +89,7 @@
             </div>
         </section> -->
 
-        <section class="cta-catalog section" aria-labelledby="cta-catalog-title">
+        <section class="cta-catalog section" id="catalog-teaser" aria-labelledby="cta-catalog-title">
             <div class="layout">
                 <div class="cta-catalog__glow">
                     <div class="cta-catalog__inner">
@@ -135,18 +142,35 @@
             </div>
         </section>
 
-        <section class="slogan-strip section" aria-label="Девиз компании">
+        <section class="slogan-strip section" aria-labelledby="slogan-gallery-title">
             <div class="layout">
-                <div class="slogan-strip__gallery">
-                    <div class="slogan-strip__cell">
-                        <img class="slogan-strip__img" src="./img/Slogan-1.jpg" width="640" height="427" alt="Дождевальная машина в работе" loading="lazy" decoding="async">
+                <h2 class="section__title" id="slogan-gallery-title">Галерея</h2>
+                <div class="slogan-strip__frame">
+                    <button type="button" class="slogan-strip__nav slogan-strip__nav--prev" aria-controls="slogan-gallery-slider" aria-label="Предыдущее фото">
+                        <svg class="slogan-strip__nav-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                    </button>
+                    <div class="slogan-strip__viewport" id="slogan-gallery-slider" tabindex="0" role="region" aria-label="Фотографии — листайте или откройте галерею по клику">
+                        <div class="slogan-strip__track">
+                            <div class="slogan-strip__slide">
+                                <a class="slogan-strip__link" href="#" aria-label="Открыть галерею: дождевальная машина в работе">
+                                    <img class="slogan-strip__img" src="./img/Slogan-1.jpg" width="640" height="427" alt="" loading="lazy" decoding="async" draggable="false">
+                                </a>
+                            </div>
+                            <div class="slogan-strip__slide">
+                                <a class="slogan-strip__link" href="#" aria-label="Открыть галерею: полив сельхозполей">
+                                    <img class="slogan-strip__img" src="./img/Slogan-2.png" width="640" height="427" alt="" loading="lazy" decoding="async" draggable="false">
+                                </a>
+                            </div>
+                            <div class="slogan-strip__slide">
+                                <a class="slogan-strip__link" href="#" aria-label="Открыть галерею: техника орошения на поле">
+                                    <img class="slogan-strip__img" src="./img/Slogan-3.jfif" width="640" height="427" alt="" loading="lazy" decoding="async" draggable="false">
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="slogan-strip__cell">
-                        <img class="slogan-strip__img" src="./img/Slogan-2.png" width="640" height="427" alt="Полив сельхозполей" loading="lazy" decoding="async">
-                    </div>
-                    <div class="slogan-strip__cell">
-                        <img class="slogan-strip__img" src="./img/Slogan-3.jfif" width="640" height="427" alt="Техника орошения на поле" loading="lazy" decoding="async">
-                    </div>
+                    <button type="button" class="slogan-strip__nav slogan-strip__nav--next" aria-controls="slogan-gallery-slider" aria-label="Следующее фото">
+                        <svg class="slogan-strip__nav-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    </button>
                 </div>
                 <p class="slogan-strip__motto">Мы решаем любые проблемы с дождевальными машинами!</p>
             </div>
