@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="page-about" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="О компании Слафт — запчасти и комплектующие для дождевальных машин, наша история и ценности.">
+    <title>О нас — Слафт</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-main__body">
+    <header class="header">
+        <div class="layout header__layout">
+            <div class="header__bar">
+                <a class="header__logo" href="index.html">
+                    <img class="header__logo-img" src="./img/logo.svg" width="180" height="62" alt="Слафт" fetchpriority="high" decoding="async">
+                </a>
+                <button class="header__burger" type="button" aria-expanded="false" aria-controls="header-panel" aria-label="Открыть меню">
+                    <span class="header__burger-line" aria-hidden="true"></span>
+                    <span class="header__burger-line" aria-hidden="true"></span>
+                    <span class="header__burger-line" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="header__panel" id="header-panel">
+                <div class="header__contacts">
+                    <div class="header__phone">
+                        <a class="header__phone-number" href="tel:+78000000000">+7 (800) 000-00-00</a>
+                        <a class="header__phone-number" href="tel:+79000000000">+7 (900) 000-00-00</a>
+                    </div>
+                    <div class="header__social">
+                        <a class="header__social-link" href="#" aria-label="Написать в WhatsApp">
+                            <img class="header__social-icon" src="./img/whatsapp.svg" width="40" height="40" alt="" decoding="async">
+                        </a>
+                        <a class="header__social-link" href="#" aria-label="Написать в Telegram">
+                            <img class="header__social-icon" src="./img/telegram.svg" width="40" height="40" alt="" decoding="async">
+                        </a>
+                    </div>
+                </div>
+                <form class="header__search" action="#" method="get" role="search">
+                    <label class="visually-hidden" for="catalog-search-about">Поиск по каталогу</label>
+                    <input class="header__search-input" id="catalog-search-about" type="search" name="q" placeholder="Поиск по каталогу" autocomplete="off">
+                    <button class="header__search-btn" type="submit" aria-label="Искать">
+                        <svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    </button>
+                </form>
+                <p class="header__hours"><span class="header__hours-label">Режим:</span> пн–пт 9:00–18:00</p>
+                <div class="header__actions">
+                    <a class="header__action" href="#" aria-label="Корзина">
+                        <svg class="header__icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.15.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    </a>
+                    <a class="header__action" href="#" aria-label="Личный кабинет">
+                        <svg class="header__icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </a>
+                </div>
+                <nav class="header__nav" aria-label="Основное меню">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item"><a class="header__nav-link" href="index.html">Главная</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link header__nav-link--current" href="about.html">О нас</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="advantages.html">Преимущества и акции</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="#">Каталог</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="#">Доставка и оплата</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="#">Гарантия и возврат</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="about-page">
+        <div class="about-page__intro">
+            <div class="layout">
+                <h1 class="section__title about-page__page-title" id="about-page-title">О нас</h1>
+            </div>
+        </div>
+
+        <section class="about-page__section section" aria-labelledby="about-lead-heading">
+            <div class="layout">
+                <h2 class="visually-hidden" id="about-lead-heading">О компании</h2>
+                <div class="about-page__split">
+                    <div class="about-page__lead-text">
+                        <p class="about-page__lead-p"><strong>Слафт</strong> занимается поставкой запчастей и комплектующих для дождевальных и круговых машин: мы помогаем хозяйствам и сервисным компаниям держать технику в рабочем состоянии в течение всего сезона.</p>
+                        <p class="about-page__lead-p">Наша команда ориентируется на реальные условия поля — сроки, логистику и срочность ремонта. Мы стремимся к тому, чтобы подбор позиций, оформление заказа и консультация менеджера были понятными и быстрыми.</p>
+                        <p class="about-page__lead-p">Каталог структурирован по узлам и типам техники; при необходимости подскажем аналоги и уточним совместимость с вашей установкой.</p>
+                    </div>
+                    <figure class="about-page__lead-media">
+                        <img class="about-page__lead-img" src="./img/new-main-hero-bg.png" width="900" height="600" alt="Дождевальная машина на поле" loading="lazy" decoding="async">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-page__history section" aria-labelledby="about-history-title">
+            <div class="layout">
+                <h2 class="section__title" id="about-history-title">Наша история</h2>
+                <div class="about-history" data-about-history>
+                    <div class="about-history__rail-viewport">
+                        <div class="about-history__rail" role="tablist" aria-label="Хронология компании">
+                            <button type="button" class="about-history__tab about-history__tab--active" role="tab" aria-selected="true" id="about-hist-tab-0" aria-controls="about-hist-panel-0" data-about-history-tab="0">Июнь 2016</button>
+                            <button type="button" class="about-history__tab" role="tab" aria-selected="false" id="about-hist-tab-1" aria-controls="about-hist-panel-1" data-about-history-tab="1">Март 2017</button>
+                            <button type="button" class="about-history__tab" role="tab" aria-selected="false" id="about-hist-tab-2" aria-controls="about-hist-panel-2" data-about-history-tab="2">Май 2018</button>
+                            <button type="button" class="about-history__tab" role="tab" aria-selected="false" id="about-hist-tab-3" aria-controls="about-hist-panel-3" data-about-history-tab="3">Сентябрь 2019</button>
+                            <button type="button" class="about-history__tab" role="tab" aria-selected="false" id="about-hist-tab-4" aria-controls="about-hist-panel-4" data-about-history-tab="4">Февраль 2021</button>
+                            <button type="button" class="about-history__tab" role="tab" aria-selected="false" id="about-hist-tab-5" aria-controls="about-hist-panel-5" data-about-history-tab="5">Июнь 2023</button>
+                        </div>
+                    </div>
+
+                    <div class="about-history__panels">
+                        <div class="about-history__panel" id="about-hist-panel-0" role="tabpanel" aria-labelledby="about-hist-tab-0">
+                            <div class="about-history__panel-grid">
+                                <figure class="about-history__figure">
+                                    <img class="about-history__img" src="./img/Slogan-1.jpg" width="640" height="427" alt="" loading="lazy" decoding="async">
+                                </figure>
+                                <div class="about-history__text">
+                                    <h3 class="about-history__panel-title">Июнь 2016 — старт компании</h3>
+                                    <p class="about-history__panel-desc">Мы вышли на рынок с небольшим складом и каталогом типовых позиций для распространённых моделей дождевальных установок. Первые клиенты — региональные сервисы и хозяйства Центрального региона.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-history__panel" id="about-hist-panel-1" role="tabpanel" aria-labelledby="about-hist-tab-1" hidden>
+                            <div class="about-history__panel-grid">
+                                <figure class="about-history__figure">
+                                    <img class="about-history__img" src="./img/Slogan-2.png" width="640" height="427" alt="" loading="lazy" decoding="async">
+                                </figure>
+                                <div class="about-history__text">
+                                    <h3 class="about-history__panel-title">Март 2017 — расширение ассортимента</h3>
+                                    <p class="about-history__panel-desc">Добавили узлы привода, шарниры и комплектующие для круговых машин нескольких брендов. Наладили прямые поставки от проверенных производителей, чтобы сократить срок ожидания редких деталей.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-history__panel" id="about-hist-panel-2" role="tabpanel" aria-labelledby="about-hist-tab-2" hidden>
+                            <div class="about-history__panel-grid">
+                                <figure class="about-history__figure">
+                                    <img class="about-history__img" src="./img/Slogan-3.jfif" width="640" height="427" alt="" loading="lazy" decoding="async">
+                                </figure>
+                                <div class="about-history__text">
+                                    <h3 class="about-history__panel-title">Май 2018 — работа «под сезон»</h3>
+                                    <p class="about-history__panel-desc">Сформировали отдельную линию поддержки в пик полива: ускоренная комплектация заказов и приоритетная отгрузка для срочных ремонтов. Закрепили партнёрства с логистическими службами по ключевым направлениям.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-history__panel" id="about-hist-panel-3" role="tabpanel" aria-labelledby="about-hist-tab-3" hidden>
+                            <div class="about-history__panel-grid">
+                                <figure class="about-history__figure">
+                                    <img class="about-history__img" src="./img/new-main-hero-bg.png" width="900" height="600" alt="" loading="lazy" decoding="async">
+                                </figure>
+                                <div class="about-history__text">
+                                    <h3 class="about-history__panel-title">Сентябрь 2019 — цифровой каталог</h3>
+                                    <p class="about-history__panel-desc">Запустили структурированный онлайн-каталог с поиском по артикулам и типам техники. Менеджеры получили единую базу кроссов и аналогов — подбор стал быстрее и прозрачнее для клиента.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-history__panel" id="about-hist-panel-4" role="tabpanel" aria-labelledby="about-hist-tab-4" hidden>
+                            <div class="about-history__panel-grid">
+                                <figure class="about-history__figure">
+                                    <img class="about-history__img" src="./img/Slogan-2.png" width="640" height="427" alt="" loading="lazy" decoding="async">
+                                </figure>
+                                <div class="about-history__text">
+                                    <h3 class="about-history__panel-title">Февраль 2021 — отсрочка и договоры</h3>
+                                    <p class="about-history__panel-desc">Для постоянных клиентов ввели гибкие условия по оплате и отгрузке по договорённости. Расширили штат консультантов по совместимости запчастей с конкретными моделями машин.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-history__panel" id="about-hist-panel-5" role="tabpanel" aria-labelledby="about-hist-tab-5" hidden>
+                            <div class="about-history__panel-grid">
+                                <figure class="about-history__figure">
+                                    <img class="about-history__img" src="./img/Slogan-1.jpg" width="640" height="427" alt="" loading="lazy" decoding="async">
+                                </figure>
+                                <div class="about-history__text">
+                                    <h3 class="about-history__panel-title">Июнь 2023 — на сегодня</h3>
+                                    <p class="about-history__panel-desc">Продолжаем наращивать склад и работать с поставщиками по всей стране. Фокус по-прежнему на качестве позиций, честных сроках и понятной коммуникации — от заявки до получения запчастей в хозяйстве.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="layout footer__layout">
+            <div class="footer__col footer__col--brand">
+                <a class="footer__logo" href="index.html">
+                    <img class="footer__logo-img" src="./img/logo.svg" width="180" height="62" alt="Слафт" decoding="async" loading="lazy">
+                </a>
+                <p class="footer__hours"><span class="footer__hours-label">Режим:</span> пн–пт 9:00–18:00</p>
+                <ul class="footer__legal">
+                    <li><a class="footer__link" href="#">Политика конфиденциальности</a></li>
+                    <li><a class="footer__link" href="#">Договор-оферта</a></li>
+                </ul>
+            </div>
+            <nav class="footer__col footer__col--info" aria-labelledby="footer-info-title">
+                <p class="footer__col-title" id="footer-info-title">Информация</p>
+                <ul class="footer__list">
+                    <li><a class="footer__link" href="about.html">О нас</a></li>
+                    <li><a class="footer__link" href="contacts.html">Контакты</a></li>
+                    <li><a class="footer__link" href="advantages.html">Преимущества и акции</a></li>
+                    <li><a class="footer__link" href="#">Доставка и оплата</a></li>
+                    <li><a class="footer__link" href="#">Гарантия и возврат</a></li>
+                </ul>
+            </nav>
+            <nav class="footer__col footer__col--catalog" aria-labelledby="footer-catalog-title">
+                <a class="footer__col-title footer__col-title--link" id="footer-catalog-title" href="#">Каталог</a>
+                <ul class="footer__list">
+                    <li><a class="footer__link" href="#">Категория 1</a></li>
+                    <li><a class="footer__link" href="#">Категория 2</a></li>
+                    <li><a class="footer__link" href="#">Категория 3</a></li>
+                    <li><a class="footer__link" href="#">Категория 4</a></li>
+                    <li><a class="footer__link" href="#">Категория 5</a></li>
+                </ul>
+            </nav>
+            <div class="footer__col footer__col--contacts" aria-labelledby="footer-contacts-title">
+                <p class="footer__col-title" id="footer-contacts-title">Контакты</p>
+                <a class="footer__link footer__link--phone" href="tel:+78000000000">+7 (800) 000-00-00</a>
+                <a class="footer__link footer__link--phone" href="tel:+79000000000">+7 (900) 000-00-00</a>
+                <a class="footer__link footer__link--mail" href="mailto:info@example.com">info@example.com</a>
+                <div class="footer__social">
+                    <a class="footer__social-link" href="#" aria-label="Написать в WhatsApp">
+                        <img class="footer__social-icon" src="./img/whatsapp.svg" width="40" height="40" alt="" decoding="async">
+                    </a>
+                    <a class="footer__social-link" href="#" aria-label="Написать в Telegram">
+                        <img class="footer__social-icon" src="./img/telegram.svg" width="40" height="40" alt="" decoding="async">
+                    </a>
+                </div>
+            </div>
+            <p class="footer__copy">© Слафт, <span id="footer-year">2026</span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

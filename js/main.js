@@ -381,3 +381,236 @@
     viewport.addEventListener("pointerup", endDrag);
     viewport.addEventListener("pointercancel", endDrag);
 })();
+
+(function () {
+    var modal = document.getElementById("contact-question-modal");
+    var openBtn = document.getElementById("contact-question-modal-open");
+    var form = document.getElementById("contact-question-form");
+    if (!modal || !openBtn) {
+        return;
+    }
+
+    var closeTriggers = modal.querySelectorAll("[data-question-modal-close]");
+    var lastFocus = null;
+
+    function focusableElements() {
+        return Array.prototype.slice
+            .call(modal.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled])'))
+            .filter(function (el) {
+                return el.getAttribute("tabindex") !== "-1";
+            });
+    }
+
+    function openModal() {
+        lastFocus = document.activeElement;
+        modal.removeAttribute("hidden");
+        document.body.style.overflow = "hidden";
+        var nameInput = document.getElementById("contact-q-name");
+        if (nameInput) {
+            window.setTimeout(function () {
+                nameInput.focus();
+            }, 0);
+        }
+    }
+
+    function closeModal() {
+        modal.setAttribute("hidden", "");
+        document.body.style.overflow = "";
+        if (lastFocus && typeof lastFocus.focus === "function") {
+            lastFocus.focus();
+        }
+    }
+
+    openBtn.addEventListener("click", function () {
+        openModal();
+    });
+
+    closeTriggers.forEach(function (el) {
+        el.addEventListener("click", function () {
+            closeModal();
+        });
+    });
+
+    modal.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            e.preventDefault();
+            closeModal();
+            return;
+        }
+        if (e.key !== "Tab") {
+            return;
+        }
+        var list = focusableElements();
+        if (list.length === 0) {
+            return;
+        }
+        var first = list[0];
+        var last = list[list.length - 1];
+        if (e.shiftKey) {
+            if (document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            }
+        } else if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    });
+
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            closeModal();
+            form.reset();
+        });
+    }
+})();
+
+(function () {
+    var root = document.querySelector("[data-about-history]");
+    if (!root) {
+        return;
+    }
+
+    var tabs = root.querySelectorAll("[data-about-history-tab]");
+    var panels = root.querySelectorAll(".about-history__panel");
+    if (!tabs.length || !panels.length) {
+        return;
+    }
+
+    var railViewport = root.querySelector(".about-history__rail-viewport");
+
+    function activate(index) {
+        tabs.forEach(function (tab, i) {
+            var on = i === index;
+            tab.classList.toggle("about-history__tab--active", on);
+            tab.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        panels.forEach(function (panel, i) {
+            if (i === index) {
+                panel.removeAttribute("hidden");
+            } else {
+                panel.setAttribute("hidden", "");
+            }
+        });
+    }
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            var idx = parseInt(tab.getAttribute("data-about-history-tab"), 10);
+            if (!isNaN(idx)) {
+                activate(idx);
+            }
+        });
+    });
+
+    root.addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") {
+            return;
+        }
+        var focused = document.activeElement;
+        if (!focused || !focused.matches("[data-about-history-tab]")) {
+            return;
+        }
+        var cur = parseInt(focused.getAttribute("data-about-history-tab"), 10);
+        if (isNaN(cur)) {
+            return;
+        }
+        var next = e.key === "ArrowRight" ? cur + 1 : cur - 1;
+        if (next < 0 || next >= tabs.length) {
+            return;
+        }
+        e.preventDefault();
+        tabs[next].focus();
+        activate(next);
+    });
+
+    if (!railViewport) {
+        return;
+    }
+
+    var dragStartX = 0;
+    var dragScrollStart = 0;
+    var dragging = false;
+    var maxPointerDelta = 0;
+    var suppressTabClick = false;
+
+    railViewport.addEventListener(
+        "wheel",
+        function (e) {
+            if (railViewport.scrollWidth <= railViewport.clientWidth + 1) {
+                return;
+            }
+            if (e.deltaX === 0 && e.deltaY === 0) {
+                return;
+            }
+            e.preventDefault();
+            railViewport.scrollLeft += e.deltaY + e.deltaX;
+        },
+        { passive: false }
+    );
+
+    railViewport.addEventListener("pointerdown", function (e) {
+        if (e.pointerType === "touch") {
+            return;
+        }
+        if (e.button !== 0) {
+            return;
+        }
+        if (railViewport.scrollWidth <= railViewport.clientWidth + 1) {
+            return;
+        }
+        dragging = true;
+        suppressTabClick = false;
+        maxPointerDelta = 0;
+        dragStartX = e.clientX;
+        dragScrollStart = railViewport.scrollLeft;
+        railViewport.classList.add("about-history__rail-viewport--dragging");
+        try {
+            railViewport.setPointerCapture(e.pointerId);
+        } catch (err) {
+            /* ignore */
+        }
+    });
+
+    railViewport.addEventListener("pointermove", function (e) {
+        if (!dragging || e.pointerType === "touch") {
+            return;
+        }
+        maxPointerDelta = Math.max(maxPointerDelta, Math.abs(e.clientX - dragStartX));
+        railViewport.scrollLeft = dragScrollStart - (e.clientX - dragStartX);
+    });
+
+    function endRailDrag(e) {
+        if (!dragging) {
+            return;
+        }
+        dragging = false;
+        railViewport.classList.remove("about-history__rail-viewport--dragging");
+        if (maxPointerDelta > 10) {
+            suppressTabClick = true;
+        }
+        try {
+            railViewport.releasePointerCapture(e.pointerId);
+        } catch (err) {
+            /* ignore */
+        }
+    }
+
+    railViewport.addEventListener("pointerup", endRailDrag);
+    railViewport.addEventListener("pointercancel", endRailDrag);
+
+    railViewport.addEventListener(
+        "click",
+        function (e) {
+            var tab = e.target.closest(".about-history__tab");
+            if (!tab || !suppressTabClick) {
+                return;
+            }
+            e.preventDefault();
+            e.stopPropagation();
+            suppressTabClick = false;
+        },
+        true
+    );
+})();
