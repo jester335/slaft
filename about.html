@@ -56,9 +56,9 @@
                         <li class="header__nav-item"><a class="header__nav-link" href="index.html">Главная</a></li>
                         <li class="header__nav-item"><a class="header__nav-link header__nav-link--current" href="about.html">О нас</a></li>
                         <li class="header__nav-item"><a class="header__nav-link" href="advantages.html">Преимущества и акции</a></li>
-                        <li class="header__nav-item"><a class="header__nav-link" href="#">Каталог</a></li>
-                        <li class="header__nav-item"><a class="header__nav-link" href="#">Доставка и оплата</a></li>
-                        <li class="header__nav-item"><a class="header__nav-link" href="#">Гарантия и возврат</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="catalog.html">Каталог</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="delivery.html">Доставка и оплата</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="warranty.html">Гарантия и возврат</a></li>
                         <li class="header__nav-item"><a class="header__nav-link" href="contacts.html">Контакты</a></li>
                     </ul>
                 </nav>
@@ -89,7 +89,54 @@
             </div>
         </section>
 
-        <section class="about-page__history section" aria-labelledby="about-history-title">
+        <section class="cta-catalog section about-page__cta-band" id="about-partner-cta" aria-labelledby="about-cta-partners-title">
+            <div class="layout">
+                <div class="cta-catalog__glow">
+                    <div class="cta-catalog__inner">
+                        <h2 class="cta-catalog__title" id="about-cta-partners-title">Работать с нами — короткий путь к качественным запчастям</h2>
+                        <p class="cta-catalog__text">Это самый короткий путь к запчастям официального дилера на экономически выгодных условиях: прозрачные цены, подбор под вашу технику и сопровождение заказа до отгрузки.</p>
+                        <a class="button button--primary" href="catalog.html">Перейти в каталог</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits section" aria-labelledby="about-dealer-title">
+            <div class="layout">
+                <div class="benefits__glow">
+                    <div class="benefits__inner">
+                        <h2 class="section__title" id="about-dealer-title">Слафт — официальный и надёжный дилер</h2>
+                        <ul class="benefits__list">
+                            <li class="benefits__item"><strong class="benefits__strong">Официальный статус</strong> — работаем в рамках дилерских отношений с производителем: заводской ассортимент, гарантия происхождения деталей и поддержка по применимости.</li>
+                            <li class="benefits__item"><strong class="benefits__strong">Качество запчастей</strong> — поставляем оригинальные и проверенные позиции для дождевальных и круговых машин; при необходимости подберём аналоги и уточним совместимость с вашей установкой.</li>
+                            <li class="benefits__item"><strong class="benefits__strong">Прямой канал без лишних звеньев</strong> — меньше посредников: выгоднее условия, предсказуемые сроки и единая точка ответственности — от заявки до получения заказа.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages section" aria-labelledby="about-trust-points-title">
+            <div class="layout">
+                <h2 class="section__title" id="about-trust-points-title">Почему с нами спокойно работать</h2>
+                <ul class="grid-cards grid-cards--2">
+                    <li class="card card--metal">
+                        <h3 class="card__title">Надёжность</h3>
+                        <p class="card__text">Держим обещанные сроки, честно говорим о наличии и поставках, помогаем в сезон, когда технике нельзя простаивать.</p>
+                    </li>
+                    <li class="card card--metal">
+                        <h3 class="card__title">Экспертиза в орошении</h3>
+                        <p class="card__text">Понимаем специфику поля и ремонта дождевальных систем — консультируем не «по шаблону», а с учётом вашей модели и узла.</p>
+                    </li>
+                    <li class="card card--metal">
+                        <h3 class="card__title">Выгодные условия</h3>
+                        <p class="card__text">Отсрочка и гибкая оплата для постоянных клиентов, акции и накопительные скидки при росте объёмов закупок.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- <section class="about-page__history section" aria-labelledby="about-history-title">
             <div class="layout">
                 <h2 class="section__title" id="about-history-title">Наша история</h2>
                 <div class="about-history" data-about-history>
@@ -174,7 +221,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+    
+        
     </main>
 
     <footer class="footer">
@@ -195,18 +244,17 @@
                     <li><a class="footer__link" href="about.html">О нас</a></li>
                     <li><a class="footer__link" href="contacts.html">Контакты</a></li>
                     <li><a class="footer__link" href="advantages.html">Преимущества и акции</a></li>
-                    <li><a class="footer__link" href="#">Доставка и оплата</a></li>
-                    <li><a class="footer__link" href="#">Гарантия и возврат</a></li>
+                    <li><a class="footer__link" href="delivery.html">Доставка и оплата</a></li>
+                    <li><a class="footer__link" href="warranty.html">Гарантия и возврат</a></li>
                 </ul>
             </nav>
             <nav class="footer__col footer__col--catalog" aria-labelledby="footer-catalog-title">
-                <a class="footer__col-title footer__col-title--link" id="footer-catalog-title" href="#">Каталог</a>
+                <a class="footer__col-title footer__col-title--link" id="footer-catalog-title" href="catalog.html">Каталог</a>
                 <ul class="footer__list">
-                    <li><a class="footer__link" href="#">Категория 1</a></li>
-                    <li><a class="footer__link" href="#">Категория 2</a></li>
-                    <li><a class="footer__link" href="#">Категория 3</a></li>
-                    <li><a class="footer__link" href="#">Категория 4</a></li>
-                    <li><a class="footer__link" href="#">Категория 5</a></li>
+                    <li><a class="footer__link" href="catalog-irrigation.html">Дождевальные машины</a></li>
+                    <li><a class="footer__link" href="catalog-tractors.html">Тракторы</a></li>
+                    <li><a class="footer__link" href="catalog-combines.html">Комбайны</a></li>
+                    <li><a class="footer__link" href="catalog.html">Все разделы</a></li>
                 </ul>
             </nav>
             <div class="footer__col footer__col--contacts" aria-labelledby="footer-contacts-title">

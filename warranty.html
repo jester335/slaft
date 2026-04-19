@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="page-warranty" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Гарантия и возврат — Слафт: условия для физических лиц и организаций, гарантийное обслуживание запчастей.">
+    <title>Гарантия и возврат — Слафт</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-main__body">
+    <header class="header">
+        <div class="layout header__layout">
+            <div class="header__bar">
+                <a class="header__logo" href="index.html">
+                    <img class="header__logo-img" src="./img/logo.svg" width="180" height="62" alt="Слафт" fetchpriority="high" decoding="async">
+                </a>
+                <button class="header__burger" type="button" aria-expanded="false" aria-controls="header-panel" aria-label="Открыть меню">
+                    <span class="header__burger-line" aria-hidden="true"></span>
+                    <span class="header__burger-line" aria-hidden="true"></span>
+                    <span class="header__burger-line" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="header__panel" id="header-panel">
+                <div class="header__contacts">
+                    <div class="header__phone">
+                        <a class="header__phone-number" href="tel:+78000000000">+7 (800) 000-00-00</a>
+                        <a class="header__phone-number" href="tel:+79000000000">+7 (900) 000-00-00</a>
+                    </div>
+                    <div class="header__social">
+                        <a class="header__social-link" href="#" aria-label="Написать в WhatsApp">
+                            <img class="header__social-icon" src="./img/whatsapp.svg" width="40" height="40" alt="" decoding="async">
+                        </a>
+                        <a class="header__social-link" href="#" aria-label="Написать в Telegram">
+                            <img class="header__social-icon" src="./img/telegram.svg" width="40" height="40" alt="" decoding="async">
+                        </a>
+                    </div>
+                </div>
+                <form class="header__search" action="#" method="get" role="search">
+                    <label class="visually-hidden" for="catalog-search-warranty">Поиск по каталогу</label>
+                    <input class="header__search-input" id="catalog-search-warranty" type="search" name="q" placeholder="Поиск по каталогу" autocomplete="off">
+                    <button class="header__search-btn" type="submit" aria-label="Искать">
+                        <svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    </button>
+                </form>
+                <p class="header__hours"><span class="header__hours-label">Режим:</span> пн–пт 9:00–18:00</p>
+                <div class="header__actions">
+                    <a class="header__action" href="#" aria-label="Корзина">
+                        <svg class="header__icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.15.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    </a>
+                    <a class="header__action" href="#" aria-label="Личный кабинет">
+                        <svg class="header__icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </a>
+                </div>
+                <nav class="header__nav" aria-label="Основное меню">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item"><a class="header__nav-link" href="index.html">Главная</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="about.html">О нас</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="advantages.html">Преимущества и акции</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="catalog.html">Каталог</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="delivery.html">Доставка и оплата</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link header__nav-link--current" href="warranty.html">Гарантия и возврат</a></li>
+                        <li class="header__nav-item"><a class="header__nav-link" href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="legal-page">
+        <div class="legal-page__intro">
+            <div class="layout">
+                <nav class="catalog-breadcrumb" aria-label="Навигация по сайту">
+                    <ol class="catalog-breadcrumb__list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li aria-current="page">Гарантия и возврат</li>
+                    </ol>
+                </nav>
+                <h1 class="section__title legal-page__page-title" id="warranty-page-title">Гарантия и возврат</h1>
+            </div>
+        </div>
+
+        <section class="legal-page__section section" aria-labelledby="warranty-general-title">
+            <div class="layout legal-page__prose">
+                <h2 class="legal-page__h2" id="warranty-general-title">Общие положения</h2>
+                <p>Здесь собраны ориентировочные условия гарантийного обслуживания и возврата товаров интернет-магазина <strong>Слафт</strong>. Итоговые условия по конкретной позиции могут уточняться в счёте, накладной или гарантийном талоне производителя.</p>
+                <p>Для <strong>физических лиц</strong> применяются нормы Закона РФ «О защите прав потребителей». Для <strong>юридических лиц и индивидуальных предпринимателей</strong> отношения регулируются Гражданским кодексом РФ и договором поставки — возврат товара надлежащего качества, как правило, не предусмотрен, если иное не согласовано отдельно.</p>
+                <p>Ниже переключатель разделов: выберите категорию, чтобы увидеть соответствующий текст.</p>
+            </div>
+        </section>
+
+        <section class="legal-page__section section" aria-labelledby="warranty-audience-heading">
+            <div class="layout">
+                <h2 class="section__title" id="warranty-audience-heading">Условия по категории клиента</h2>
+                <div class="about-history legal-page__audience-tabs" data-audience-tabs>
+                    <div class="about-history__rail-viewport">
+                        <div class="about-history__rail" role="tablist" aria-label="Категория клиента">
+                            <button type="button" class="about-history__tab about-history__tab--active" role="tab" aria-selected="true" tabindex="0" id="warranty-aud-tab-0" aria-controls="warranty-aud-panel-0" data-audience-tab="0">Физические лица</button>
+                            <button type="button" class="about-history__tab" role="tab" aria-selected="false" tabindex="-1" id="warranty-aud-tab-1" aria-controls="warranty-aud-panel-1" data-audience-tab="1">Юридические лица и ИП</button>
+                        </div>
+                    </div>
+                    <div class="about-history__panels">
+                        <div class="about-history__panel" id="warranty-aud-panel-0" role="tabpanel" aria-labelledby="warranty-aud-tab-0">
+                            <div class="legal-page__prose legal-page__prose--tab">
+                                <h3 class="legal-page__h3">Товар надлежащего качества</h3>
+                                <p>Возврат возможен в сроки, предусмотренные законом для дистанционной продажи и розничной купли-продажи, при сохранении товарного вида, упаковки, пломб и отсутствии следов монтажа или эксплуатации.</p>
+                                <ul class="legal-page__list">
+                                    <li>При дистанционном заказе — ориентируйтесь на 7 календарных дней с момента получения (ст.&nbsp;26.1 ЗоЗПП).</li>
+                                    <li>При покупке в офисе с демонстрацией товара — иные сроки по ст.&nbsp;25.1 ЗоЗПП; уточняйте у менеджера при выдаче.</li>
+                                    <li>Позиции, изготовленные или заказанные под вас (нестандарт, подборка под конкретную машину по согласованию), возврату и обмену по желанию покупателя <strong>не подлежат</strong>, если иное не указано в договоре.</li>
+                                </ul>
+                                <p>Для оформления возврата понадобятся документы, подтверждающие покупку (чек, накладная). Возврат денежных средств может осуществляться с удержанием фактических расходов на доставку до вас — в соответствии с законом.</p>
+                                <h3 class="legal-page__h3">Товар ненадлежащего качества</h3>
+                                <p>Если обнаружены недостатки, возникшие до передачи товара или по вине продавца, вы вправе требовать устранения недостатков, замены, соразмерного уменьшения цены или возврата уплаченного — в порядке главы 1 ЗоЗПП.</p>
+                                <p>До принятия решения продавец вправе провести проверку качества. Без предоставления товара для диагностики гарантийное обращение может быть затруднено.</p>
+                                <p>Свяжитесь с нами по телефонам на сайте или через форму на странице <a class="legal-page__inline-link" href="contacts.html">Контакты</a> — подскажем адрес для отправки и перечень документов.</p>
+                            </div>
+                        </div>
+                        <div class="about-history__panel" id="warranty-aud-panel-1" role="tabpanel" aria-labelledby="warranty-aud-tab-1" hidden>
+                            <div class="legal-page__prose legal-page__prose--tab">
+                                <h3 class="legal-page__h3">Договор поставки</h3>
+                                <p>Отгрузка юридическим лицам и ИП производится на основании договора, счёта и УПД. Претензии по количеству, комплектности и внешнему виду направляются в письменном виде в сроки, указанные в договоре или накладной (обычно не позднее 5 рабочих дней с даты получения, если не оговорено иначе).</p>
+                                <h3 class="legal-page__h3">Возврат товара надлежащего качества</h3>
+                                <p>Для организаций и ИП возврат «просто так» не регулируется ЗоЗПП. Возможен только в случаях, прямо предусмотренных договором, или при заводском браке / несоответствии спецификации.</p>
+                                <h3 class="legal-page__h3">Гарантийный ремонт и экспертиза</h3>
+                                <p>По гарантийным случаям действует процедура, согласованная с поставщиком и производителем: диагностика, акт, при необходимости — независимая экспертиза за счёт стороны, назначенной договором или по соглашению сторон.</p>
+                                <p>Сроки поставки замены по гарантии зависят от наличия у производителя и могут быть увеличены для редких позиций — фиксируются в переписке с менеджером.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="legal-page__section section" aria-labelledby="warranty-periods-title">
+            <div class="layout legal-page__prose">
+                <h2 class="legal-page__h2" id="warranty-periods-title">Гарантийные сроки (ориентир)</h2>
+                <p>Конкретный гарантийный срок указан в описании товара, на этикетке или в документации завода-изготовителя. Ниже — обобщённая сетка для вёрстки; при расхождении с документами к поставке действуют документы к поставке.</p>
+                <div class="legal-page__table-wrap">
+                    <table class="legal-page__table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Категория</th>
+                                <th scope="col">Гарантия</th>
+                                <th scope="col">Комментарий</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Оригинальные запчасти производителя дождевальных машин</td>
+                                <td>по гарантии завода</td>
+                                <td>Учёт регистрации машины у производителя — по правилам бренда.</td>
+                            </tr>
+                            <tr>
+                                <td>Аналоги и комплектующие сторонних брендов</td>
+                                <td>6–12 мес.</td>
+                                <td>На заводской брак и скрытые дефекты; не распространяется на износ при нормальной эксплуатации.</td>
+                            </tr>
+                            <tr>
+                                <td>Расходники (уплотнения, фильтры, мелкая фурнитура)</td>
+                                <td>обмен при обнаружении брака до установки</td>
+                                <td>После монтажа претензии по внешнему виду не принимаются.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="legal-page__section section" aria-labelledby="warranty-note-title">
+            <div class="layout legal-page__prose">
+                <h2 class="visually-hidden" id="warranty-note-title">Дисклеймер</h2>
+                <blockquote class="legal-page__note">
+                    <p>Текст носит информационный характер и не заменяет индивидуальную консультацию. Актуальные реквизиты, сроки и порядок оформления возврата или гарантии уточняйте у менеджеров Слафт на момент покупки.</p>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="layout footer__layout">
+            <div class="footer__col footer__col--brand">
+                <a class="footer__logo" href="index.html">
+                    <img class="footer__logo-img" src="./img/logo.svg" width="180" height="62" alt="Слафт" decoding="async" loading="lazy">
+                </a>
+                <p class="footer__hours"><span class="footer__hours-label">Режим:</span> пн–пт 9:00–18:00</p>
+                <ul class="footer__legal">
+                    <li><a class="footer__link" href="#">Политика конфиденциальности</a></li>
+                    <li><a class="footer__link" href="#">Договор-оферта</a></li>
+                </ul>
+            </div>
+            <nav class="footer__col footer__col--info" aria-labelledby="footer-info-title">
+                <p class="footer__col-title" id="footer-info-title">Информация</p>
+                <ul class="footer__list">
+                    <li><a class="footer__link" href="about.html">О нас</a></li>
+                    <li><a class="footer__link" href="contacts.html">Контакты</a></li>
+                    <li><a class="footer__link" href="advantages.html">Преимущества и акции</a></li>
+                    <li><a class="footer__link" href="delivery.html">Доставка и оплата</a></li>
+                    <li><a class="footer__link" href="warranty.html">Гарантия и возврат</a></li>
+                </ul>
+            </nav>
+            <nav class="footer__col footer__col--catalog" aria-labelledby="footer-catalog-title">
+                <a class="footer__col-title footer__col-title--link" id="footer-catalog-title" href="catalog.html">Каталог</a>
+                <ul class="footer__list">
+                    <li><a class="footer__link" href="catalog-irrigation.html">Дождевальные машины</a></li>
+                    <li><a class="footer__link" href="catalog-tractors.html">Тракторы</a></li>
+                    <li><a class="footer__link" href="catalog-combines.html">Комбайны</a></li>
+                    <li><a class="footer__link" href="catalog.html">Все разделы</a></li>
+                </ul>
+            </nav>
+            <div class="footer__col footer__col--contacts" aria-labelledby="footer-contacts-title">
+                <p class="footer__col-title" id="footer-contacts-title">Контакты</p>
+                <a class="footer__link footer__link--phone" href="tel:+78000000000">+7 (800) 000-00-00</a>
+                <a class="footer__link footer__link--phone" href="tel:+79000000000">+7 (900) 000-00-00</a>
+                <a class="footer__link footer__link--mail" href="mailto:info@example.com">info@example.com</a>
+                <div class="footer__social">
+                    <a class="footer__social-link" href="#" aria-label="Написать в WhatsApp">
+                        <img class="footer__social-icon" src="./img/whatsapp.svg" width="40" height="40" alt="" decoding="async">
+                    </a>
+                    <a class="footer__social-link" href="#" aria-label="Написать в Telegram">
+                        <img class="footer__social-icon" src="./img/telegram.svg" width="40" height="40" alt="" decoding="async">
+                    </a>
+                </div>
+            </div>
+            <p class="footer__copy">© Слафт, <span id="footer-year">2026</span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

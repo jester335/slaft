@@ -614,3 +614,62 @@
         true
     );
 })();
+
+(function () {
+    var root = document.querySelector("[data-audience-tabs]");
+    if (!root) {
+        return;
+    }
+
+    var tabs = root.querySelectorAll("[data-audience-tab]");
+    var panels = root.querySelectorAll(".about-history__panel");
+    if (!tabs.length || !panels.length) {
+        return;
+    }
+
+    function activate(index) {
+        tabs.forEach(function (tab, i) {
+            var on = i === index;
+            tab.classList.toggle("about-history__tab--active", on);
+            tab.setAttribute("aria-selected", on ? "true" : "false");
+            tab.setAttribute("tabindex", on ? "0" : "-1");
+        });
+        panels.forEach(function (panel, i) {
+            if (i === index) {
+                panel.removeAttribute("hidden");
+            } else {
+                panel.setAttribute("hidden", "");
+            }
+        });
+    }
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            var idx = parseInt(tab.getAttribute("data-audience-tab"), 10);
+            if (!isNaN(idx)) {
+                activate(idx);
+            }
+        });
+    });
+
+    root.addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") {
+            return;
+        }
+        var focused = document.activeElement;
+        if (!focused || !focused.matches("[data-audience-tab]")) {
+            return;
+        }
+        var cur = parseInt(focused.getAttribute("data-audience-tab"), 10);
+        if (isNaN(cur)) {
+            return;
+        }
+        var next = e.key === "ArrowRight" ? cur + 1 : cur - 1;
+        if (next < 0 || next >= tabs.length) {
+            return;
+        }
+        e.preventDefault();
+        tabs[next].focus();
+        activate(next);
+    });
+})();
