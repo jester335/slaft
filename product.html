@@ -114,41 +114,48 @@
 
                 <!-- Галерея -->
                 <div class="product-gallery">
-                    <div class="product-gallery__main">
-                        <img class="product-gallery__img" src="./img/new-main-hero-bg.png" width="480" height="480" alt="Соединительная коробка Hydrus для проводов и кабелей 13-жил" fetchpriority="high" decoding="async">
+                    <div class="product-gallery__frame">
+                        <div class="product-gallery__main">
+                            <img class="product-gallery__img" src="./img/new-main-hero-bg.png" width="480" height="480" alt="Соединительная коробка Hydrus для проводов и кабелей 13-жил" fetchpriority="high" decoding="async">
+                        </div>
                     </div>
                 </div>
 
-                <!-- Краткие характеристики -->
-                <div class="product-brief">
-                    <h2 class="product-brief__title">Характеристики</h2>
-                    <dl class="product-brief__list">
-                        <div class="product-brief__row">
-                            <dt class="product-brief__term">Базовая единица</dt>
-                            <dd class="product-brief__value">шт</dd>
-                        </div>
-                        <div class="product-brief__row">
-                            <dt class="product-brief__term">Производитель</dt>
-                            <dd class="product-brief__value">HYDRUS</dd>
-                        </div>
-                    </dl>
-                </div>
+                <!-- Правая панель: характеристики + покупка -->
+                <aside class="product-aside" aria-label="Информация и покупка">
 
-                <!-- Блок покупки -->
-                <aside class="product-purchase" aria-label="Покупка товара">
-                    <p class="product-purchase__price">47&nbsp;120.14&nbsp;<span class="product-purchase__currency">₽/шт</span></p>
-                    <p class="product-purchase__availability product-purchase__availability--in-stock">
-                        <span class="product-purchase__dot" aria-hidden="true"></span>
-                        В наличии
-                    </p>
-                    <div class="product-purchase__controls">
-                        <div class="product-qty" role="group" aria-label="Количество">
-                            <button class="product-qty__btn" type="button" aria-label="Уменьшить количество">−</button>
-                            <input class="product-qty__input" type="number" value="1" min="1" aria-label="Количество товара">
-                            <button class="product-qty__btn" type="button" aria-label="Увеличить количество">+</button>
-                        </div>
-                        <button class="button button--primary product-purchase__cart-btn" type="button">В корзину</button>
+                    <!-- Краткие характеристики -->
+                    <div class="product-brief">
+                        <h2 class="product-brief__title">Характеристики</h2>
+                        <dl class="product-brief__list">
+                            <div class="product-brief__row">
+                                <dt class="product-brief__term">Базовая единица</dt>
+                                <dd class="product-brief__value">шт</dd>
+                            </div>
+                            <div class="product-brief__row">
+                                <dt class="product-brief__term">Производитель</dt>
+                                <dd class="product-brief__value">HYDRUS</dd>
+                            </div>
+                        </dl>
                     </div>
+
+                    <!-- Блок покупки -->
+                    <div class="product-purchase">
+                        <p class="product-purchase__price">47&nbsp;120.14&nbsp;<span class="product-purchase__currency">₽/шт</span></p>
+                        <p class="product-purchase__availability product-purchase__availability--in-stock">
+                            <span class="product-purchase__dot" aria-hidden="true"></span>
+                            В наличии
+                        </p>
+                        <div class="product-purchase__controls">
+                            <div class="product-qty" role="group" aria-label="Количество">
+                                <button class="product-qty__btn" type="button" aria-label="Уменьшить количество">−</button>
+                                <input class="product-qty__input" type="number" value="1" min="1" aria-label="Количество товара">
+                                <button class="product-qty__btn" type="button" aria-label="Увеличить количество">+</button>
+                            </div>
+                            <button class="button button--primary product-purchase__cart-btn" type="button">В корзину</button>
+                        </div>
+                    </div>
+
                 </aside>
 
             </div>
@@ -204,15 +211,16 @@
                                 </section>
                             </div>
                             <aside class="product-consult" aria-label="Консультация">
-                                <svg class="product-consult__icon" width="64" height="64" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill="none" stroke="var(--color-sky-deep)" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                    <circle cx="12" cy="5" r="1.5" fill="var(--color-sky-deep)"/>
-                                    <text x="11.5" y="5.5" font-size="3" fill="var(--color-sky-deep)" text-anchor="middle" dominant-baseline="middle">?</text>
+                                <svg class="product-consult__icon" width="64" height="64" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                                    <circle cx="28" cy="14" r="10" stroke="var(--color-sky-deep)" stroke-width="2"/>
+                                    <text x="28" y="19" font-size="13" font-weight="700" fill="var(--color-sky-deep)" text-anchor="middle" font-family="system-ui,sans-serif">?</text>
+                                    <rect x="6" y="28" width="44" height="22" rx="3" stroke="var(--color-sky-deep)" stroke-width="2"/>
+                                    <path d="M6 31l22 13 22-13" stroke="var(--color-sky-deep)" stroke-width="2" stroke-linejoin="round"/>
                                 </svg>
                                 <p class="product-consult__title">Нужна консультация?</p>
                                 <p class="product-consult__text">Наши специалисты ответят на любой интересующий вопрос</p>
                                 <hr class="product-consult__divider">
-                                <a class="product-consult__link" href="contacts.html">Задать вопрос</a>
+                                <button class="product-consult__link" type="button" data-product-question-open>Задать вопрос</button>
                             </aside>
                         </div>
                     </div>
@@ -235,13 +243,16 @@
                                 <p><strong>Соединительная коробка Hydrus для проводов и кабелей 13-жил</strong> гарантирует надёжное и безопасное подключение в системах орошения, даже в самых сложных условиях эксплуатации.</p>
                             </div>
                             <aside class="product-consult" aria-label="Консультация">
-                                <svg class="product-consult__icon" width="64" height="64" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill="none" stroke="var(--color-sky-deep)" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                <svg class="product-consult__icon" width="64" height="64" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                                    <circle cx="28" cy="14" r="10" stroke="var(--color-sky-deep)" stroke-width="2"/>
+                                    <text x="28" y="19" font-size="13" font-weight="700" fill="var(--color-sky-deep)" text-anchor="middle" font-family="system-ui,sans-serif">?</text>
+                                    <rect x="6" y="28" width="44" height="22" rx="3" stroke="var(--color-sky-deep)" stroke-width="2"/>
+                                    <path d="M6 31l22 13 22-13" stroke="var(--color-sky-deep)" stroke-width="2" stroke-linejoin="round"/>
                                 </svg>
                                 <p class="product-consult__title">Нужна консультация?</p>
                                 <p class="product-consult__text">Наши специалисты ответят на любой интересующий вопрос</p>
                                 <hr class="product-consult__divider">
-                                <a class="product-consult__link" href="contacts.html">Задать вопрос</a>
+                                <button class="product-consult__link" type="button" data-product-question-open>Задать вопрос</button>
                             </aside>
                         </div>
                     </div>
@@ -269,13 +280,16 @@
                                 </div>
                             </div>
                             <aside class="product-consult" aria-label="Консультация">
-                                <svg class="product-consult__icon" width="64" height="64" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill="none" stroke="var(--color-sky-deep)" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                <svg class="product-consult__icon" width="64" height="64" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                                    <circle cx="28" cy="14" r="10" stroke="var(--color-sky-deep)" stroke-width="2"/>
+                                    <text x="28" y="19" font-size="13" font-weight="700" fill="var(--color-sky-deep)" text-anchor="middle" font-family="system-ui,sans-serif">?</text>
+                                    <rect x="6" y="28" width="44" height="22" rx="3" stroke="var(--color-sky-deep)" stroke-width="2"/>
+                                    <path d="M6 31l22 13 22-13" stroke="var(--color-sky-deep)" stroke-width="2" stroke-linejoin="round"/>
                                 </svg>
                                 <p class="product-consult__title">Нужна консультация?</p>
                                 <p class="product-consult__text">Наши специалисты ответят на любой интересующий вопрос</p>
                                 <hr class="product-consult__divider">
-                                <a class="product-consult__link" href="contacts.html">Задать вопрос</a>
+                                <button class="product-consult__link" type="button" data-product-question-open>Задать вопрос</button>
                             </aside>
                         </div>
                     </div>
@@ -295,13 +309,16 @@
                                 <p>Все логистические процессы организованы с соблюдением сроков и требований к сохранности груза.</p>
                             </div>
                             <aside class="product-consult" aria-label="Консультация">
-                                <svg class="product-consult__icon" width="64" height="64" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill="none" stroke="var(--color-sky-deep)" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                <svg class="product-consult__icon" width="64" height="64" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                                    <circle cx="28" cy="14" r="10" stroke="var(--color-sky-deep)" stroke-width="2"/>
+                                    <text x="28" y="19" font-size="13" font-weight="700" fill="var(--color-sky-deep)" text-anchor="middle" font-family="system-ui,sans-serif">?</text>
+                                    <rect x="6" y="28" width="44" height="22" rx="3" stroke="var(--color-sky-deep)" stroke-width="2"/>
+                                    <path d="M6 31l22 13 22-13" stroke="var(--color-sky-deep)" stroke-width="2" stroke-linejoin="round"/>
                                 </svg>
                                 <p class="product-consult__title">Нужна консультация?</p>
                                 <p class="product-consult__text">Наши специалисты ответят на любой интересующий вопрос</p>
                                 <hr class="product-consult__divider">
-                                <a class="product-consult__link" href="contacts.html">Задать вопрос</a>
+                                <button class="product-consult__link" type="button" data-product-question-open>Задать вопрос</button>
                             </aside>
                         </div>
                     </div>
@@ -310,7 +327,50 @@
             </div>
 
         </div>
+
+        <!-- Декоративные пятна фона -->
+        <div class="product-page__glow product-page__glow--1" aria-hidden="true"></div>
+        <div class="product-page__glow product-page__glow--2" aria-hidden="true"></div>
     </main>
+
+    <!-- Модалка «Задать вопрос» -->
+    <div class="question-modal" id="product-question-modal" role="dialog" aria-modal="true" aria-labelledby="product-question-modal-title" hidden>
+        <button type="button" class="question-modal__backdrop" data-product-question-close tabindex="-1" aria-label="Закрыть окно"></button>
+        <div class="question-modal__dialog">
+            <div class="question-modal__glow">
+                <div class="question-modal__inner">
+                    <div class="question-modal__head">
+                        <h2 class="question-modal__title" id="product-question-modal-title">Задать вопрос</h2>
+                        <button type="button" class="question-modal__close" data-product-question-close aria-label="Закрыть">
+                            <svg class="question-modal__close-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+                        </button>
+                    </div>
+                    <form class="question-modal__form" id="product-question-form" action="#" method="post">
+                        <div class="question-modal__field">
+                            <label class="question-modal__label" for="product-q-name">Ваше имя <span class="question-modal__req" aria-hidden="true">*</span></label>
+                            <input class="question-modal__input" id="product-q-name" name="name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="question-modal__field">
+                            <label class="question-modal__label" for="product-q-phone">Телефон <span class="question-modal__req" aria-hidden="true">*</span></label>
+                            <input class="question-modal__input" id="product-q-phone" name="phone" type="tel" autocomplete="tel" required>
+                        </div>
+                        <div class="question-modal__field">
+                            <label class="question-modal__label" for="product-q-email">E-mail</label>
+                            <input class="question-modal__input" id="product-q-email" name="email" type="email" autocomplete="email" placeholder="mail@domen.com">
+                        </div>
+                        <div class="question-modal__field">
+                            <label class="question-modal__label" for="product-q-message">Вопрос <span class="question-modal__req" aria-hidden="true">*</span></label>
+                            <textarea class="question-modal__textarea" id="product-q-message" name="question" rows="5" required></textarea>
+                        </div>
+                        <div class="question-modal__actions">
+                            <button type="submit" class="button question-modal__submit">Отправить</button>
+                            <p class="question-modal__legend"><span class="question-modal__req" aria-hidden="true">*</span> – обязательные поля</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="layout footer__layout">
